@@ -1,12 +1,13 @@
 using UnityEngine;
 
+
 public class PlayerInteraction : MonoBehaviour
 {
     //how far a player has to be to be able to interact with an object
     public float playerReach = 3f;
     Interactable currentInteractable;
     public GameObject place1;
-    public GameObject place2;
+
 
     // Update is called once per frame
     void Update()
@@ -15,7 +16,7 @@ public class PlayerInteraction : MonoBehaviour
         CheckInteraction();
 
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
-        { 
+        {
            
         }
     }
