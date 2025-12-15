@@ -5,7 +5,8 @@ public class PlayerInteraction : MonoBehaviour
     //how far a player has to be to be able to interact with an object
     public float playerReach = 3f;
     Interactable currentInteractable;
-
+    public GameObject place1;
+    public GameObject place2;
 
     // Update is called once per frame
     void Update()
@@ -15,7 +16,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         { 
-
+           
         }
     }
 
@@ -67,11 +68,13 @@ public class PlayerInteraction : MonoBehaviour
     {
         currentInteractable = newInteractable;
         currentInteractable.EnableOutline();
+        HUDcontroller.instance.EnableInteractionText(currentInteractable.message);
     }
 
     void DisableCurrentInteractable()
     //for disabling the interactable
     {
+        HUDcontroller.instance.DisableInteractionText();
         currentInteractable.DisableOutline();
         currentInteractable = null;
     }

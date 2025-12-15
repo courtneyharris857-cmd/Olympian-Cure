@@ -22,4 +22,14 @@ public class mainmenu : MonoBehaviour
         
     }
 
+    public void controlsButton()
+    {
+        SceneManager.LoadScene("Controls");
+    }
+
+    public void returnButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 }
