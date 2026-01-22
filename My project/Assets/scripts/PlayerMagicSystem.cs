@@ -2,31 +2,25 @@ using UnityEngine;
 
 public class PlayerMagicSystem : MonoBehaviour
 {
-    private Spell spellToCast;
-    private float maxMana = 100f;
-    private float currentMana;
-    private float manaRechargeRate = 2f;
-    private float timeBetweenCasts = 0.25f;
+
+    [SerializeField] private Spell spellToCast;
+    [SerializeField] private float maxMana = 100f;
+    [SerializeField] private float currentMana;
+    [SerializeField] private float manaRechargeRate = 2f;
+    [SerializeField] private float timeBetweenCasts = 0.25f;
     private float currentCastTimer;
 
 
-    private Transform castPoint;
+    [SerializeField] private Transform castPoint;
     private bool castingMagic = false;
 
 
 
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        if (!castingMagic && Input.GetMouseButtonDown(1)) //checking if mouse button held down whilst not casting a spell
+        if (!castingMagic && Input.GetMouseButton(1)) //checking if mouse button held down whilst not casting a spell
         {
             castingMagic = true; //casts spell
             currentCastTimer = 0; //resets spell cooldown

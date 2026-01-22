@@ -6,23 +6,13 @@ using UnityEngine;
 public class Spell : MonoBehaviour
 {
     public SpellScriptableObject SpellToCast;
+    public SpellScriptableObject SpellRadius;
 
     private SphereCollider myCollider;
     private Rigidbody myRigidbody;
 
 
-
-
-
-
-
-
-
-
-
-
-
-    void Awake()
+    private void Awake()
     {
         myCollider = GetComponent<SphereCollider>();
         myCollider.isTrigger = true;
@@ -34,7 +24,7 @@ public class Spell : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (SpellToCast.Speed > 0)
         {

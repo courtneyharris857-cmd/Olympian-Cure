@@ -43496,7 +43496,7 @@ PrefabInstance:
       addedObject: {fileID: 1483000510}
     - targetCorrespondingSourceObject: {fileID: 9156347144040445547, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1483000517}
+      addedObject: {fileID: 1483000514}
     - targetCorrespondingSourceObject: {fileID: 9156347143994207886, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1379115434}
@@ -43626,7 +43626,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9156347144040445546, guid: c82236c16aae9d34fbd437f8dea6e2c9, type: 3}
   m_PrefabInstance: {fileID: 1483000507}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1483000517
+--- !u!114 &1483000514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43638,6 +43638,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c45937ef33793c40b480ed6686b15d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellToCast: {fileID: 9060335940624347890, guid: 0f32b96e82dea7a47bad69592b89c76d, type: 3}
+  maxMana: 100
+  currentMana: 0
+  manaRechargeRate: 2
+  timeBetweenCasts: 0.25
+  castPoint: {fileID: 1063362978}
 --- !u!1 &1505413887
 GameObject:
   m_ObjectHideFlags: 0
