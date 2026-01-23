@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class CastSpell : MonoBehaviour
 {
-    public float spellSpeed;
-    public float spellRate, spellDamage;
+    public float spellSpeed = 25;
+    public float spellRate = 1;
+    public float spellDamage = 5;
 
     public Transform spellSpawnTransform;
     public GameObject spellPrefab;
