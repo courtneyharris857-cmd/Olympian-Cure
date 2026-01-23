@@ -1,38 +1,25 @@
 using UnityEngine;
-[RequireComponent(typeof(SphereCollider))]
-[RequireComponent(typeof(Rigidbody))]
-
 
 public class Spell : MonoBehaviour
 {
-    public SpellScriptableObject SpellToCast;
-    public SpellScriptableObject SpellRadius;
+    public float damage;
+    public float lifeTime = 3;
 
-    private SphereCollider myCollider;
-    private Rigidbody myRigidbody;
-
-
-    private void Awake()
-    {
-        myCollider = GetComponent<SphereCollider>();
-        myCollider.isTrigger = true;
-        myCollider.radius = SpellToCast.SpellRadius;
-
-        myRigidbody = GetComponent<Rigidbody>();
-        myRigidbody.isKinematic = true;
-        Destroy(this.gameObject, SpellToCast.Lifetime); //if it doesnt hit anything it will destroy itself anyways
-    }
-
-    // Update is called once per frame
     private void Update()
     {
-        if (SpellToCast.Speed > 0)
+        lifeTime -= Time.deltaTime;
+
+        if (lifeTime < 2 )
         {
-            transform.Translate(transform.forward * SpellToCast.Speed * Time.deltaTime);
+            Destroy(gameObject);
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(this.gameObject);
+        if (other.GetComponent<Enemy>() != null)
+        {
+            other.GetComponent<Enemy>().enemyHealth -= damage;
+        }
+        Destroy(gameObject);
     }
 }

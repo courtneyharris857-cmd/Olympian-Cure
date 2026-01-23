@@ -68,14 +68,14 @@ namespace EasyPeasyFirstPersonController
         private float slideSpeedVelocity;
         private float currentTiltAngle;
         private float tiltVelocity;
-        public AudioSource footstep;
+        //public AudioSource footstep;
 
         public float CurrentCameraHeight => isCrouching || isSliding ? crouchCameraHeight : originalCameraParentHeight;
 
         private void Awake()
         {
-            footstep = GetComponent<AudioSource>();
-            footstep.Play(0);
+        //    footstep = GetComponent<AudioSource>();
+        //    footstep.Play(0);
 
             characterController = GetComponent<CharacterController>();
             cam = playerCamera.GetComponent<Camera>();
@@ -216,11 +216,11 @@ namespace EasyPeasyFirstPersonController
                     currentCameraHeight + currentBobOffset,
                     cameraParent.localPosition.z);
                 recoil.z = moveInput.x * -2f;
-                footstep.UnPause();
+                //footstep.UnPause();
             }
             else
             {
-                footstep.Pause();
+                //footstep.Pause();
                 bobTimer = 0f;
                 float targetCameraHeight = isCrouching || isSliding ? crouchCameraHeight : originalCameraParentHeight;
                 currentCameraHeight = Mathf.Lerp(currentCameraHeight, targetCameraHeight, Time.deltaTime * 10f);
